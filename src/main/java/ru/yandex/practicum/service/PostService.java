@@ -125,7 +125,11 @@ public class PostService {
 
     @Transactional
     public byte[] getImage(Long id) {
-        return imageRepository.findByPostId(id).getFirst().getData();
+        List<Image> images = imageRepository.findByPostId(id);
+        if (images != null && !images.isEmpty()) {
+            return images.getFirst().getData();
+        }
+        return null;
     }
 
     @Transactional
