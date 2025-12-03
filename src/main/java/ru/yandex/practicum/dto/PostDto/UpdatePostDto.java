@@ -1,6 +1,6 @@
 package ru.yandex.practicum.dto.PostDto;
 
-import ru.yandex.practicum.ControllerExceptionHandler.Exceptions.NoIntegrityInputData;
+import ru.yandex.practicum.controllerExceptionHandler.Exceptions.NoIntegrityInputData;
 import ru.yandex.practicum.model.Post;
 
 public class UpdatePostDto extends PostDto {

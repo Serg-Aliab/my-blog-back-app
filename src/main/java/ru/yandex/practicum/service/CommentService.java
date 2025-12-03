@@ -3,7 +3,7 @@ package ru.yandex.practicum.service;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.yandex.practicum.ControllerExceptionHandler.Exceptions.NoIntegrityInputData;
+import ru.yandex.practicum.controllerExceptionHandler.Exceptions.NoIntegrityInputData;
 import ru.yandex.practicum.dto.CommentDto.AddCommentDto;
 import ru.yandex.practicum.dto.CommentDto.ResponseCommentDto;
 import ru.yandex.practicum.dto.CommentDto.UpdateCommentDto;

@@ -5,12 +5,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.validation.annotation.Validated;
-import ru.yandex.practicum.ControllerExceptionHandler.Exceptions.NoIntegrityInputData;
+import ru.yandex.practicum.controllerExceptionHandler.Exceptions.NoIntegrityInputData;
 import ru.yandex.practicum.model.Post;
 
 import javax.validation.constraints.NotBlank;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Validated
 @NoArgsConstructor

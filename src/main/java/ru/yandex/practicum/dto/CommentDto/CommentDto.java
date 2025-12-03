@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.validation.annotation.Validated;
-import ru.yandex.practicum.ControllerExceptionHandler.Exceptions.NoIntegrityInputData;
+import ru.yandex.practicum.controllerExceptionHandler.Exceptions.NoIntegrityInputData;
 import ru.yandex.practicum.model.Comment;
 import ru.yandex.practicum.model.Post;
 

@@ -1,4 +1,4 @@
-package ru.yandex.practicum.ControllerExceptionHandler;
+package ru.yandex.practicum.controllerExceptionHandler;
 
 import org.hibernate.PropertyValueException;
 import org.springframework.http.HttpStatus;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.sqlite.SQLiteException;
-import ru.yandex.practicum.ControllerExceptionHandler.Exceptions.NoIntegrityInputData;
+import ru.yandex.practicum.controllerExceptionHandler.Exceptions.NoIntegrityInputData;
 
 @ControllerAdvice
 public class CommonExceptionHandler {

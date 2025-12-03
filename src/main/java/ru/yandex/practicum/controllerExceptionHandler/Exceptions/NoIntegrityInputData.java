@@ -1,4 +1,4 @@
-package ru.yandex.practicum.ControllerExceptionHandler.Exceptions;
+package ru.yandex.practicum.controllerExceptionHandler.Exceptions;
 
 public class NoIntegrityInputData extends RuntimeException {
     private String message;

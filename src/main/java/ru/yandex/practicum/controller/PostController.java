@@ -5,7 +5,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -16,9 +15,7 @@ import ru.yandex.practicum.dto.PostDto.UpdatePostDto;
 import ru.yandex.practicum.service.PostService;
 import javax.validation.Valid;
 import java.net.URLDecoder;
-import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
-import java.util.Map;
 
 @Validated
 @RestController
@@ -28,21 +25,18 @@ public class PostController {
     @Autowired
     private PostService postService;
 
-    @Transactional
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public ResponsePostDto add(@Valid @RequestBody AddPostDto addPostDto) {
         return postService.add(addPostDto);
     }
 
-    @Transactional
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public ResponsePostDto get(@Valid @PathVariable(name = "id") Long id) {
         return postService.get(id);
     }
 
-    @Transactional
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
@@ -55,21 +49,18 @@ public class PostController {
                 Integer.parseInt(pageNumber)-1, Integer.parseInt(pageSize));
     }
 
-    @Transactional
     @PutMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.ACCEPTED)
     public ResponsePostDto update(@Valid @PathVariable(name = "id") Long id, @Valid @RequestBody UpdatePostDto updPostDto) {
         return postService.update(id, updPostDto);
     }
 
-    @Transactional
     @PostMapping(path = "/{id}/likes", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public ResponsePostDto addLike(@Valid @PathVariable(name = "id") Long id) {
         return postService.addLike(id);
     }
 
-    @Transactional
     @PutMapping(path = "/{id}/image", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> uploadImage(
             @Valid @PathVariable("id") Long id,
@@ -82,7 +73,6 @@ public class PostController {
         return ResponseEntity.status(HttpStatus.CREATED).body("ok");
     }
 
-    @Transactional
     @GetMapping(value = "/{id}/image", produces = MediaType.IMAGE_PNG_VALUE)
     public ResponseEntity<byte[]> getImage(@Valid @PathVariable("id") Long id) {
         byte[] bytes = postService.getImage(id);
@@ -95,7 +85,6 @@ public class PostController {
                 .body(bytes);
     }
 
-    @Transactional
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void delete(@Valid @PathVariable("id") Long id) {

@@ -3,12 +3,11 @@ package ru.yandex.practicum.service;
 import jakarta.transaction.Transactional;
 import org.antlr.v4.runtime.misc.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import ru.yandex.practicum.ControllerExceptionHandler.Exceptions.NoIntegrityInputData;
+import ru.yandex.practicum.controllerExceptionHandler.Exceptions.NoIntegrityInputData;
 import ru.yandex.practicum.dto.PostDto.AddPostDto;
 import ru.yandex.practicum.dto.PostDto.ResponsePostDto;
 import ru.yandex.practicum.dto.PostDto.ResponsePostsPageDto;
@@ -20,7 +19,6 @@ import ru.yandex.practicum.repository.ImageRepository;
 import ru.yandex.practicum.repository.PostRepository;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PostService {
